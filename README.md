@@ -1,9 +1,7 @@
-# timer_button
-
+# Timer Button
 A new Flutter package for timer button.
 
-## Getting Started
+A Button which will be enabled after specified time.
 
-For help getting started with Flutter, view our online [documentation](https://flutter.io/).
+![IMAGE1](assets/demo.png)
 
-For help on editing package code, view the [documentation](https://flutter.io/developing-packages/).

@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: new MyHomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -38,26 +39,28 @@ class MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 new TimerButton(
-                  label: "Try Again",
-                  timeOutInSeconds: 5,
+                  label: "Send OTP Again",
+                  timeOutInSeconds: 20,
                   onPressed: () {},
-                  buttonType: ButtonType.RaisedButton,
                   disabledColor: Colors.red,
+                  color: Colors.deepPurple,
+                  disabledTextStyle: new TextStyle(fontSize: 20.0),
+                  activeTextStyle: new TextStyle(fontSize: 20.0, color: Colors.white),
                 ),
                 new TimerButton(
                   label: "Try Again",
+                  timeOutInSeconds: 10,
+                  onPressed: () {},
+                  buttonType: ButtonType.OutlineButton,
+                ),
+                new TimerButton(
+                  label: "CLOSE",
                   timeOutInSeconds: 5,
                   onPressed: () {},
                   buttonType: ButtonType.FlatButton,
-                  disabledColor: Colors.red,
+                  disabledColor: Colors.deepOrange,
+                  color: Colors.green,
                 ),
-                new TimerButton(
-                  label: "Try Again",
-                  timeOutInSeconds: 5,
-                  onPressed: () {},
-                  buttonType: ButtonType.OutlineButton,
-                  disabledColor: Colors.red,
-                )
               ],
             ),
           ),

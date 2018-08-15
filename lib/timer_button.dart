@@ -8,13 +8,28 @@ import 'package:meta/meta.dart';
 enum ButtonType { RaisedButton, FlatButton, OutlineButton }
 
 class TimerButton extends StatefulWidget {
+  /// Create a TimerButton button.
+  ///
+  /// The [label], [onPressed], and [timeOutInSeconds]
+  /// arguments must not be null.
+
   final String label;
+
   final int timeOutInSeconds;
+
+  ///[onPressed] Called when the button is tapped or otherwise activated.
   final VoidCallback onPressed;
+
+  /// Defines the button's base colors
   final Color color;
+
+  /// The color to use for this button's text when the button is disabled.
   final Color disabledColor;
+
   final TextStyle activeTextStyle;
+
   final TextStyle disabledTextStyle;
+
   final ButtonType buttonType;
 
   const TimerButton({

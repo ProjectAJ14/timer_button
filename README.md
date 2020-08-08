@@ -1,8 +1,8 @@
-[![](https://img.shields.io/badge/build-1.0.0-brightgreen)](https://github.com/ajaynonstopio/timer_button) 
+[![](https://img.shields.io/badge/build-1.0.1-brightgreen)](https://github.com/ajaynonstopio/timer_button) 
 
 
 # Timer Button
-A new Flutter package for timer button.
+A new Flutter package for timer button which will be enabled after specified time.
 
 ![timer_button](https://cdn-images-1.medium.com/max/640/1*NhgmN1C4ltcQA-o34SYbIQ.gif)
 

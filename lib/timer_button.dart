@@ -3,7 +3,6 @@ library timer_button;
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 
 enum ButtonType { RaisedButton, FlatButton, OutlineButton }
 

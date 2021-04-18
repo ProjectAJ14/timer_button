@@ -103,6 +103,11 @@ class _TimerButtonState extends State<TimerButton> {
 
   _onPressed() {
     if (timeUpFlag) {
+      setState(() {
+        timeUpFlag = false;
+      });
+      timeCounter = widget.timeOutInSeconds;
+      _timerUpdate();
       if (widget.onPressed != null) widget.onPressed();
     }
   }

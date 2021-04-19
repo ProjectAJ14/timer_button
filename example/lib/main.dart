@@ -45,7 +45,8 @@ class MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                   disabledColor: Colors.red,
                   color: Colors.deepPurple,
                   disabledTextStyle: new TextStyle(fontSize: 20.0),
-                  activeTextStyle: new TextStyle(fontSize: 20.0, color: Colors.white),
+                  activeTextStyle:
+                      new TextStyle(fontSize: 20.0, color: Colors.white),
                 ),
                 new TimerButton(
                   label: "Try Again",

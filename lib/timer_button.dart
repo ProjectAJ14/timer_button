@@ -41,7 +41,7 @@ class TimerButton extends StatefulWidget {
   ///buttonType
   final ButtonType buttonType;
 
-  ///buttonType
+  ///If resetTimerOnPressed is true reset the timer when the button is pressed : default to true
   final bool resetTimerOnPressed;
 
   const TimerButton({
@@ -127,6 +127,7 @@ class _TimerButtonState extends State<TimerButton> {
     switch (widget.buttonType) {
       case ButtonType.RaisedButton:
         //TODO: (Ajay) Remove deprecated members
+        // ignore: deprecated_member_use
         return RaisedButton(
           disabledColor: widget.disabledColor,
           color: widget.color,
@@ -135,6 +136,7 @@ class _TimerButtonState extends State<TimerButton> {
         );
         break;
       case ButtonType.FlatButton:
+        // ignore: deprecated_member_use
         return FlatButton(
           color: widget.color,
           disabledColor: widget.disabledColor,
@@ -143,6 +145,7 @@ class _TimerButtonState extends State<TimerButton> {
         );
         break;
       case ButtonType.OutlineButton:
+        // ignore: deprecated_member_use
         return OutlineButton(
           borderSide: BorderSide(
             color: widget.color,

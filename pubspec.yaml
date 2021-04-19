@@ -1,8 +1,9 @@
 name: timer_button
 description: A new Flutter package for timer button.
-version: 1.0.1
-documentation: https://github.com/ajaynonstopio/timer_button
+version: 1.0.2
+author: https://pub.dev/publishers/dart.nonstopio.com/packages
 homepage: https://github.com/ajaynonstopio/timer_button
+documentation: https://github.com/ajaynonstopio/timer_button
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

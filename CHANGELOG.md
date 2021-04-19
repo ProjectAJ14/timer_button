@@ -1,4 +1,8 @@
 
+## [1.0.2] 
+
+* Feature Added: Reset timer button ([#5](https://github.com/ajaynonstopio/timer_button/issues/5)). Thanks to [gerald-tetteh](https://github.com/gerald-tetteh)
+
 ## [1.0.1] 
 
 * Updated package description

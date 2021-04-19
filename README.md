@@ -1,7 +1,9 @@
-[![](https://img.shields.io/badge/build-1.0.1-brightgreen)](https://github.com/ajaynonstopio/timer_button) 
-
-
 # Timer Button
+
+[![](https://img.shields.io/badge/build-1.0.2-brightgreen)[repo_link]
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+
 A new Flutter package for timer button which will be enabled after specified time.
 
 ![timer_button](https://cdn-images-1.medium.com/max/640/1*NhgmN1C4ltcQA-o34SYbIQ.gif)
@@ -76,10 +78,6 @@ There are couple of ways in which you can contribute.
   cannot be overstated!
 - Send in a Pull Request :-)
 
-
-
-
-
-
+[repo_link]: https://github.com/ajaynonstopio/timer_button
 
 

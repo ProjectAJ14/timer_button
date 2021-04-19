@@ -41,12 +41,16 @@ class TimerButton extends StatefulWidget {
   ///buttonType
   final ButtonType buttonType;
 
+  ///buttonType
+  final bool resetTimerOnPressed;
+
   const TimerButton({
     Key key,
     @required this.label,
     @required this.onPressed,
     @required this.timeOutInSeconds,
     this.color = Colors.blue,
+    this.resetTimerOnPressed = true,
     this.disabledColor,
     this.buttonType = ButtonType.RaisedButton,
     this.activeTextStyle = const TextStyle(color: Colors.white),
@@ -106,10 +110,15 @@ class _TimerButtonState extends State<TimerButton> {
       setState(() {
         timeUpFlag = false;
       });
-      // reset the timer when the button is pressed
       timeCounter = widget.timeOutInSeconds;
-      _timerUpdate();
-      if (widget.onPressed != null) widget.onPressed();
+
+      if (widget.onPressed != null) {
+        widget.onPressed();
+      }
+      // reset the timer when the button is pressed
+      if (widget.resetTimerOnPressed) {
+        _timerUpdate();
+      }
     }
   }
 
@@ -117,6 +126,7 @@ class _TimerButtonState extends State<TimerButton> {
   Widget build(BuildContext context) {
     switch (widget.buttonType) {
       case ButtonType.RaisedButton:
+        //TODO: (Ajay) Remove deprecated members
         return RaisedButton(
           disabledColor: widget.disabledColor,
           color: widget.color,

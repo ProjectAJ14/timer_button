@@ -45,20 +45,17 @@ class TimerButton extends StatefulWidget {
   final bool resetTimerOnPressed;
 
   const TimerButton({
-    Key key,
-    @required this.label,
-    @required this.onPressed,
-    @required this.timeOutInSeconds,
+    Key? key,
+    required this.label,
+    required this.onPressed,
+    required this.timeOutInSeconds,
     this.color = Colors.blue,
     this.resetTimerOnPressed = true,
-    this.disabledColor,
+    this.disabledColor = Colors.grey,
     this.buttonType = ButtonType.RaisedButton,
     this.activeTextStyle = const TextStyle(color: Colors.white),
     this.disabledTextStyle = const TextStyle(color: Colors.black45),
-  })  : assert(label != null),
-        assert(activeTextStyle != null),
-        assert(disabledTextStyle != null),
-        super(key: key);
+  }) : super(key: key);
 
   @override
   _TimerButtonState createState() => _TimerButtonState();
@@ -112,9 +109,8 @@ class _TimerButtonState extends State<TimerButton> {
       });
       timeCounter = widget.timeOutInSeconds;
 
-      if (widget.onPressed != null) {
-        widget.onPressed();
-      }
+      widget.onPressed();
+
       // reset the timer when the button is pressed
       if (widget.resetTimerOnPressed) {
         _timerUpdate();
@@ -134,7 +130,6 @@ class _TimerButtonState extends State<TimerButton> {
           onPressed: _onPressed,
           child: _buildChild(),
         );
-        break;
       case ButtonType.FlatButton:
         // ignore: deprecated_member_use
         return FlatButton(
@@ -143,7 +138,6 @@ class _TimerButtonState extends State<TimerButton> {
           onPressed: _onPressed,
           child: _buildChild(),
         );
-        break;
       case ButtonType.OutlineButton:
         // ignore: deprecated_member_use
         return OutlineButton(
@@ -154,7 +148,6 @@ class _TimerButtonState extends State<TimerButton> {
           onPressed: _onPressed,
           child: _buildChild(),
         );
-        break;
     }
 
     return Container();

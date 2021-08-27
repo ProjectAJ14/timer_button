@@ -37,6 +37,9 @@ Set ButtonType for Button. There are 3 Type of button :
  - RaisedButton ```buttonType: ButtonType.RaisedButton``` (default)
  - FlatButton ```buttonType: ButtonType.FlatButton```
  - OutlineButton ```buttonType: ButtonType.OutlineButton```
+ - ElevatedButton ```buttonType: ButtonType.ElevatedButton```
+ - TextButton ```buttonType: ButtonType.TextButton```
+ - OutlinedButton ```buttonType: ButtonType.OutlinedButton```
  
 
 

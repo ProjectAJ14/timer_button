@@ -53,7 +53,7 @@ class MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                   label: "Outline: Try Again",
                   timeOutInSeconds: 10,
                   onPressed: () {},
-                  disabledColor: Colors.red,
+                  disabledColor: Colors.yellow,
                   activeTextStyle: TextStyle(color: Colors.yellow),
                   buttonType: ButtonType.OutlineButton,
                 ),
@@ -62,7 +62,6 @@ class MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                   timeOutInSeconds: 5,
                   onPressed: () {},
                   buttonType: ButtonType.FlatButton,
-                  disabledColor: Colors.deepOrange,
                   color: Colors.green,
                 ),
                 new TimerButton(

@@ -37,7 +37,7 @@ class TimerButton extends StatefulWidget {
   /// Defines the button's base colors
   final Color color;
 
-  /// The color to use for this button's text when the button is disabled.
+  /// The color to use for this button's background/border when the button is disabled.
   final Color disabledColor;
 
   /// activeTextStyle
@@ -144,7 +144,7 @@ class _TimerButtonState extends State<TimerButton> {
         // ignore: deprecated_member_use
         return RaisedButton(
           disabledColor: widget.disabledColor,
-          color: widget.color,
+          color: timeUpFlag ? widget.color : widget.disabledColor,
           onPressed: _onPressed,
           child: _buildChild(),
         );
@@ -152,7 +152,7 @@ class _TimerButtonState extends State<TimerButton> {
       case ButtonType.FlatButton:
         // ignore: deprecated_member_use
         return FlatButton(
-          color: widget.color,
+          color: timeUpFlag ? widget.color : widget.disabledColor,
           disabledColor: widget.disabledColor,
           onPressed: _onPressed,
           child: _buildChild(),
@@ -162,7 +162,7 @@ class _TimerButtonState extends State<TimerButton> {
         // ignore: deprecated_member_use
         return OutlineButton(
           borderSide: BorderSide(
-            color: widget.color,
+            color: timeUpFlag ? widget.color : widget.disabledColor,
           ),
           disabledBorderColor: widget.disabledColor,
           onPressed: _onPressed,

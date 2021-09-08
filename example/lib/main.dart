@@ -85,7 +85,7 @@ class MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                   label: "Text: Try Again",
                   timeOutInSeconds: 5,
                   onPressed: () {
-                    print("ldaslda");
+                    print("Time for some action!");
                   },
                   buttonType: ButtonType.TextButton,
                   disabledColor: Colors.deepOrange,

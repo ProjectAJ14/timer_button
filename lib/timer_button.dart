@@ -1,10 +1,18 @@
 library timer_button;
 
 import 'dart:async';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-enum ButtonType { RaisedButton, FlatButton, OutlineButton }
+enum ButtonType {
+  RaisedButton,
+  FlatButton,
+  OutlineButton,
+  ElevatedButton,
+  TextButton,
+  OutlinedButton
+}
 
 const int aSec = 1;
 
@@ -29,11 +37,11 @@ class TimerButton extends StatefulWidget {
   /// Defines the button's base colors
   final Color color;
 
-  /// The color to use for this button's text when the button is disabled.
+  /// The color to use for this button's background/border when the button is disabled.
   final Color disabledColor;
 
   /// activeTextStyle
-  final TextStyle activeTextStyle;
+  final TextStyle? activeTextStyle;
 
   ///disabledTextStyle
   final TextStyle disabledTextStyle;
@@ -53,7 +61,7 @@ class TimerButton extends StatefulWidget {
     this.resetTimerOnPressed = true,
     this.disabledColor = Colors.grey,
     this.buttonType = ButtonType.RaisedButton,
-    this.activeTextStyle = const TextStyle(color: Colors.white),
+    this.activeTextStyle = null,
     this.disabledTextStyle = const TextStyle(color: Colors.black45),
   }) : super(key: key);
 
@@ -87,13 +95,22 @@ class _TimerButtonState extends State<TimerButton> {
   }
 
   Widget _buildChild() {
+    TextStyle? activeTextStyle;
+    if (widget.activeTextStyle == null) {
+      if (widget.buttonType == ButtonType.OutlinedButton ||
+          widget.buttonType == ButtonType.OutlineButton) {
+        activeTextStyle = TextStyle(color: widget.color);
+      } else {
+        activeTextStyle = TextStyle(color: Colors.white);
+      }
+    } else {
+      activeTextStyle = widget.activeTextStyle;
+    }
     return Container(
       child: timeUpFlag
           ? Text(
               widget.label,
-              style: (widget.buttonType == ButtonType.OutlineButton)
-                  ? widget.activeTextStyle.copyWith(color: widget.color)
-                  : widget.activeTextStyle,
+              style: activeTextStyle,
             )
           : Text(
               widget.label + labelSplitter + _timerText,
@@ -121,35 +138,61 @@ class _TimerButtonState extends State<TimerButton> {
   @override
   Widget build(BuildContext context) {
     switch (widget.buttonType) {
+      //RaisedButton is deprecated, use ElevatedButton instead
       case ButtonType.RaisedButton:
         //TODO: (Ajay) Remove deprecated members
         // ignore: deprecated_member_use
         return RaisedButton(
           disabledColor: widget.disabledColor,
-          color: widget.color,
+          color: timeUpFlag ? widget.color : widget.disabledColor,
           onPressed: _onPressed,
           child: _buildChild(),
         );
+      //FlatButton is deprecated, use TextButton instead
       case ButtonType.FlatButton:
         // ignore: deprecated_member_use
         return FlatButton(
-          color: widget.color,
+          color: timeUpFlag ? widget.color : widget.disabledColor,
           disabledColor: widget.disabledColor,
           onPressed: _onPressed,
           child: _buildChild(),
         );
+      //OutlineButton is deprecated, use OutlinedButton instead
       case ButtonType.OutlineButton:
         // ignore: deprecated_member_use
         return OutlineButton(
           borderSide: BorderSide(
-            color: widget.color,
+            color: timeUpFlag ? widget.color : widget.disabledColor,
           ),
           disabledBorderColor: widget.disabledColor,
           onPressed: _onPressed,
           child: _buildChild(),
         );
+      case ButtonType.ElevatedButton:
+        return ElevatedButton(
+            onPressed: _onPressed,
+            child: _buildChild(),
+            style: ElevatedButton.styleFrom(
+              primary: timeUpFlag ? widget.color : widget.disabledColor,
+            ));
+      case ButtonType.TextButton:
+        return TextButton(
+            onPressed: _onPressed,
+            child: _buildChild(),
+            style: TextButton.styleFrom(
+              backgroundColor: timeUpFlag ? widget.color : widget.disabledColor,
+            ));
+      case ButtonType.OutlinedButton:
+        return OutlinedButton(
+            onPressed: _onPressed,
+            child: _buildChild(),
+            style: OutlinedButton.styleFrom(
+              side: BorderSide(
+                color: timeUpFlag ? widget.color : widget.disabledColor,
+              ),
+            ));
+      default:
+        return Container();
     }
-
-    return Container();
   }
 }

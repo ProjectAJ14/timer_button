@@ -39,26 +39,55 @@ class MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 new TimerButton(
-                  label: "Send OTP Again",
+                  label: "Raised: Try Again",
                   timeOutInSeconds: 20,
                   onPressed: () {},
                   disabledColor: Colors.red,
                   color: Colors.deepPurple,
+                  buttonType: ButtonType.RaisedButton,
                   disabledTextStyle: new TextStyle(fontSize: 20.0),
                   activeTextStyle:
                       new TextStyle(fontSize: 20.0, color: Colors.white),
                 ),
                 new TimerButton(
-                  label: "Try Again",
+                  label: "Outline: Try Again",
                   timeOutInSeconds: 10,
                   onPressed: () {},
+                  disabledColor: Colors.yellow,
+                  activeTextStyle: TextStyle(color: Colors.yellow),
                   buttonType: ButtonType.OutlineButton,
                 ),
                 new TimerButton(
-                  label: "CLOSE",
+                  label: "Flat: Try Again",
                   timeOutInSeconds: 5,
                   onPressed: () {},
                   buttonType: ButtonType.FlatButton,
+                  color: Colors.green,
+                ),
+                new TimerButton(
+                  label: "Elevated: Try Again",
+                  timeOutInSeconds: 5,
+                  onPressed: () {},
+                  buttonType: ButtonType.ElevatedButton,
+                  color: Colors.green,
+                ),
+                new TimerButton(
+                  label: "Outlined: Try Again",
+                  timeOutInSeconds: 5,
+                  onPressed: () {},
+                  buttonType: ButtonType.OutlinedButton,
+                  disabledColor: Colors.deepOrange,
+                  color: Colors.green,
+                  activeTextStyle: TextStyle(color: Colors.yellow),
+                  disabledTextStyle: TextStyle(color: Colors.pink),
+                ),
+                new TimerButton(
+                  label: "Text: Try Again",
+                  timeOutInSeconds: 5,
+                  onPressed: () {
+                    print("Time for some action!");
+                  },
+                  buttonType: ButtonType.TextButton,
                   disabledColor: Colors.deepOrange,
                   color: Colors.green,
                 ),

@@ -1,6 +1,6 @@
 # Timer Button
 
-[![](https://img.shields.io/badge/build-1.0.2-brightgreen)[repo_link]
+[![](https://img.shields.io/badge/build-1.0.3-brightgreen)[repo_link]
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 

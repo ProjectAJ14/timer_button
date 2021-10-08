@@ -16,7 +16,7 @@ enum ButtonType {
 
 const int aSec = 1;
 
-const String secPostFix = 's';
+const String _secPostFix = 's';
 const String labelSplitter = " |  ";
 
 class TimerButton extends StatefulWidget {
@@ -27,6 +27,9 @@ class TimerButton extends StatefulWidget {
 
   ///label
   final String label;
+
+  ///secPostFix
+  final String secPostFix;
 
   ///[timeOutInSeconds] after which the button is enabled
   final int timeOutInSeconds;
@@ -57,11 +60,12 @@ class TimerButton extends StatefulWidget {
     required this.label,
     required this.onPressed,
     required this.timeOutInSeconds,
+    this.secPostFix = _secPostFix,
     this.color = Colors.blue,
     this.resetTimerOnPressed = true,
     this.disabledColor = Colors.grey,
     this.buttonType = ButtonType.RaisedButton,
-    this.activeTextStyle = null,
+    this.activeTextStyle,
     this.disabledTextStyle = const TextStyle(color: Colors.black45),
   }) : super(key: key);
 
@@ -73,7 +77,7 @@ class _TimerButtonState extends State<TimerButton> {
   bool timeUpFlag = false;
   int timeCounter = 0;
 
-  String get _timerText => '$timeCounter$secPostFix';
+  String get _timerText => '$timeCounter${widget.secPostFix}';
 
   @override
   void initState() {

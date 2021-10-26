@@ -83,7 +83,7 @@ class MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                 ),
                 new TimerButton(
                   label: "Text: Try Again",
-                  timeOutInSeconds: 5,
+                  timeOutInSeconds: 0,
                   onPressed: () {
                     print("Time for some action!");
                   },

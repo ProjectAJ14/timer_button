@@ -31,7 +31,8 @@ class TimerButton extends StatefulWidget {
   ///secPostFix
   final String secPostFix;
 
-  ///[timeOutInSeconds] after which the button is enabled
+  ///[timeOutInSeconds] after which the button is enabled.
+  ///Only 0 and positive values are supported.
   final int timeOutInSeconds;
 
   ///[onPressed] Called when the button is tapped or otherwise activated.
@@ -67,7 +68,8 @@ class TimerButton extends StatefulWidget {
     this.buttonType = ButtonType.RaisedButton,
     this.activeTextStyle,
     this.disabledTextStyle = const TextStyle(color: Colors.black45),
-  }) : super(key: key);
+  })  : assert(timeOutInSeconds >= 0),
+        super(key: key);
 
   @override
   _TimerButtonState createState() => _TimerButtonState();
@@ -87,15 +89,16 @@ class _TimerButtonState extends State<TimerButton> {
   }
 
   _timerUpdate() {
-    Timer(const Duration(seconds: aSec), () async {
-      setState(() {
-        timeCounter--;
-      });
-      if (timeCounter != 0)
+    if (timeCounter > 0) {
+      Timer(const Duration(seconds: aSec), () async {
+        setState(() {
+          timeCounter--;
+        });
         _timerUpdate();
-      else
-        timeUpFlag = true;
-    });
+      });
+    } else {
+      timeUpFlag = true;
+    }
   }
 
   Widget _buildChild() {

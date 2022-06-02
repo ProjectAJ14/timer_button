@@ -161,17 +161,6 @@ class _TimerButtonState extends State<TimerButton> {
           onPressed: _onPressed,
           child: _buildChild(),
         );
-      //OutlineButton is deprecated, use OutlinedButton instead
-      case ButtonType.OutlineButton:
-        // ignore: deprecated_member_use
-        return OutlineButton(
-          borderSide: BorderSide(
-            color: timeUpFlag ? widget.color : widget.disabledColor,
-          ),
-          disabledBorderColor: widget.disabledColor,
-          onPressed: _onPressed,
-          child: _buildChild(),
-        );
       case ButtonType.ElevatedButton:
         return ElevatedButton(
             onPressed: _onPressed,

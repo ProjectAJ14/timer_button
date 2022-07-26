@@ -39,32 +39,6 @@ class MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 new TimerButton(
-                  label: "Raised: Try Again",
-                  timeOutInSeconds: 20,
-                  onPressed: () {},
-                  disabledColor: Colors.red,
-                  color: Colors.deepPurple,
-                  buttonType: ButtonType.RaisedButton,
-                  disabledTextStyle: new TextStyle(fontSize: 20.0),
-                  activeTextStyle:
-                      new TextStyle(fontSize: 20.0, color: Colors.white),
-                ),
-                new TimerButton(
-                  label: "Outline: Try Again",
-                  timeOutInSeconds: 10,
-                  onPressed: () {},
-                  disabledColor: Colors.yellow,
-                  activeTextStyle: TextStyle(color: Colors.yellow),
-                  buttonType: ButtonType.OutlineButton,
-                ),
-                new TimerButton(
-                  label: "Flat: Try Again",
-                  timeOutInSeconds: 5,
-                  onPressed: () {},
-                  buttonType: ButtonType.FlatButton,
-                  color: Colors.green,
-                ),
-                new TimerButton(
                   label: "Elevated: Try Again",
                   timeOutInSeconds: 5,
                   onPressed: () {},

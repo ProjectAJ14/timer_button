@@ -28,7 +28,7 @@ dependencies:
 ## Import the package
 
 ```dart
-import 'package:timer_button/timer_button.dart';
+import 'package:timer_button/timer_button_fork.dart';
 ```
 
 

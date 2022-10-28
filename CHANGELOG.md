@@ -1,3 +1,6 @@
+##[3.0.1]
+
+* Working with latest version of `flutter` and `dart`
 
 ## [2.0.0] 
 

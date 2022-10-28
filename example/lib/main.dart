@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timer_button/timer_button.dart';
+import 'package:timer_button/timer_button_fork.dart';
 
 void main() => runApp(new MyApp());
 

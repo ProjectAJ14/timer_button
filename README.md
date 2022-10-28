@@ -1,6 +1,6 @@
 # Timer Button
 
-[![](https://img.shields.io/badge/build-2.0.0-brightgreen)](repo_link)
+[![](https://img.shields.io/badge/build-3.0.1-brightgreen)](repo_link)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 
@@ -21,7 +21,7 @@ A Button that gets triggered will enable after a specified time.
 dependencies:
   flutter:
     sdk: flutter
-  timer_button: ^[version]
+  timer_button_fork: ^[version]
 ```
 3. click the packages get button or *flutter pub get*  
 
@@ -65,7 +65,7 @@ Set disabled color ``` disabledColor: Colors.red ```
 ```
 
 
-[For issues and source code](https://github.com/ajaynonstopio/timer_button)
+[For issues and source code](https://github.com/chetanxpatil/timer_button_fork)
 
 
 ## Contributing
@@ -79,6 +79,6 @@ There are a couple of ways in which you can contribute.
   cannot be overstated!
 - Send in a Pull Request :-)
 
-[repo_link]: https://github.com/chetanxpatil/timer_button
+[repo_link]: https://github.com/chetanxpatil/timer_button_fork
 
 

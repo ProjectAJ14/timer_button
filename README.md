@@ -4,12 +4,12 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 
-A new Flutter package for timer button which will be enabled after specified time.
+This Package will enable a new Flutter package for the timer button after a specified time.
 
 ![timer_button](https://cdn-images-1.medium.com/max/640/1*NhgmN1C4ltcQA-o34SYbIQ.gif)
 
 
-A Button which will be enabled after specified time.
+A Button that gets triggered will enable after a specified time.
 
 
 ## Let's get started
@@ -34,9 +34,7 @@ import 'package:timer_button/timer_button.dart';
 
 ## Usage
 Set ButtonType for Button. There are 3 Type of button :
- - RaisedButton ```buttonType: ButtonType.RaisedButton``` (default)
- - FlatButton ```buttonType: ButtonType.FlatButton```
- - OutlineButton ```buttonType: ButtonType.OutlineButton```
+
  - ElevatedButton ```buttonType: ButtonType.ElevatedButton```
  - TextButton ```buttonType: ButtonType.TextButton```
  - OutlinedButton ```buttonType: ButtonType.OutlinedButton```
@@ -72,15 +70,15 @@ Set disabled color ``` disabledColor: Colors.red ```
 
 ## Contributing
 
-There are couple of ways in which you can contribute.
+There are a couple of ways in which you can contribute.
 - Propose any feature, enhancement
 - Report a bug
 - Fix a bug
 - Participate in a discussion and help in decision making
-- Write and improve some **documentation**. Documentation is super critical and its importance
+- Write and improve some **documentation**. Documentation is supercritical, and its importance
   cannot be overstated!
 - Send in a Pull Request :-)
 
-[repo_link]: https://github.com/ajaynonstopio/timer_button
+[repo_link]: https://github.com/chetanxpatil/timer_button
 
 

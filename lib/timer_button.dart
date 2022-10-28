@@ -1,9 +1,9 @@
-library timer_button;
+library timer_button_fork;
 
 import 'dart:async';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
+
 
 enum ButtonType {
   ElevatedButton,
@@ -11,11 +11,13 @@ enum ButtonType {
   OutlinedButton
 }
 
+
 const int aSec = 1;
 
 const String _secPostFix = 's';
 const String labelSplitter = " |  ";
 
+/// A button that starts a timer when pressed and shows the remaining time.
 class TimerButton extends StatefulWidget {
   /// Create a TimerButton button.
   ///
@@ -74,8 +76,12 @@ class _TimerButtonState extends State<TimerButton> {
   bool timeUpFlag = false;
   int timeCounter = 0;
 
+
+  /// Timer Text
   String get _timerText => '$timeCounter${widget.secPostFix}';
 
+
+  /// Timer
   late Timer ourTimer;
 
   @override
@@ -85,6 +91,8 @@ class _TimerButtonState extends State<TimerButton> {
     _timerUpdate();
   }
 
+
+  ///update the timer
   _timerUpdate() {
     if (!mounted) return;
     ourTimer = Timer(const Duration(seconds: aSec), () async {

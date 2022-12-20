@@ -1,0 +1,17 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - lib/generated/**
+    - test/**
+linter:
+  rules:
+    avoid_catches_without_on_clauses: false
+    prefer_relative_imports: true
+    avoid_print: true
+    lines_longer_than_80_chars: true
+    require_trailing_commas: true
+    depend_on_referenced_packages: false
+    prefer_interpolation_to_compose_strings: true
+    constant_identifier_names: false
+

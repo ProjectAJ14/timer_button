@@ -1,23 +1,21 @@
 library timer_button;
 
 import 'dart:async';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
 enum ButtonType {
-  RaisedButton,
-  FlatButton,
-  OutlineButton,
   ElevatedButton,
   TextButton,
-  OutlinedButton
+  OutlinedButton,
 }
 
 const int aSec = 1;
 
 const String _secPostFix = 's';
 const String labelSplitter = " |  ";
+
+/// A button that starts a timer and disables itself until the timer is done.
 
 class TimerButton extends StatefulWidget {
   /// Create a TimerButton button.
@@ -52,8 +50,12 @@ class TimerButton extends StatefulWidget {
   ///buttonType
   final ButtonType buttonType;
 
-  ///If resetTimerOnPressed is true reset the timer when the button is pressed : default to true
+  ///If resetTimerOnPressed is true reset the
+  ///timer when the button is pressed : default to true
   final bool resetTimerOnPressed;
+
+  ///
+  final bool timeUpFlag;
 
   const TimerButton({
     Key? key,
@@ -63,14 +65,15 @@ class TimerButton extends StatefulWidget {
     this.secPostFix = _secPostFix,
     this.color = Colors.blue,
     this.resetTimerOnPressed = true,
+    this.timeUpFlag = false,
     this.disabledColor = Colors.grey,
-    this.buttonType = ButtonType.RaisedButton,
+    this.buttonType = ButtonType.ElevatedButton,
     this.activeTextStyle,
     this.disabledTextStyle = const TextStyle(color: Colors.black45),
   }) : super(key: key);
 
   @override
-  _TimerButtonState createState() => _TimerButtonState();
+  State<TimerButton> createState() => _TimerButtonState();
 }
 
 class _TimerButtonState extends State<TimerButton> {
@@ -83,29 +86,42 @@ class _TimerButtonState extends State<TimerButton> {
   void initState() {
     super.initState();
     timeCounter = widget.timeOutInSeconds;
+    timeUpFlag = widget.timeUpFlag;
     _timerUpdate();
   }
 
+  _updateState() {
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
   _timerUpdate() {
+    if (timeUpFlag) {
+      return;
+    }
+    // To avoid negative values
+    if (timeCounter < 0) {
+      timeCounter = -1 * timeCounter;
+    }
     Timer(const Duration(seconds: aSec), () async {
-      setState(() {
-        timeCounter--;
-      });
-      if (timeCounter != 0)
+      timeCounter--;
+      _updateState();
+      if (timeCounter != 0) {
         _timerUpdate();
-      else
+      } else {
         timeUpFlag = true;
+      }
     });
   }
 
   Widget _buildChild() {
     TextStyle? activeTextStyle;
     if (widget.activeTextStyle == null) {
-      if (widget.buttonType == ButtonType.OutlinedButton ||
-          widget.buttonType == ButtonType.OutlineButton) {
+      if (widget.buttonType == ButtonType.OutlinedButton) {
         activeTextStyle = TextStyle(color: widget.color);
       } else {
-        activeTextStyle = TextStyle(color: Colors.white);
+        activeTextStyle = const TextStyle(color: Colors.white);
       }
     } else {
       activeTextStyle = widget.activeTextStyle;
@@ -125,13 +141,10 @@ class _TimerButtonState extends State<TimerButton> {
 
   _onPressed() {
     if (timeUpFlag) {
-      setState(() {
-        timeUpFlag = false;
-      });
+      timeUpFlag = false;
+      _updateState();
       timeCounter = widget.timeOutInSeconds;
-
       widget.onPressed();
-
       // reset the timer when the button is pressed
       if (widget.resetTimerOnPressed) {
         _timerUpdate();
@@ -141,60 +154,34 @@ class _TimerButtonState extends State<TimerButton> {
 
   @override
   Widget build(BuildContext context) {
+    final color = timeUpFlag ? widget.color : widget.disabledColor;
     switch (widget.buttonType) {
-      //RaisedButton is deprecated, use ElevatedButton instead
-      case ButtonType.RaisedButton:
-        //TODO: (Ajay) Remove deprecated members
-        // ignore: deprecated_member_use
-        return RaisedButton(
-          disabledColor: widget.disabledColor,
-          color: timeUpFlag ? widget.color : widget.disabledColor,
-          onPressed: _onPressed,
-          child: _buildChild(),
-        );
-      //FlatButton is deprecated, use TextButton instead
-      case ButtonType.FlatButton:
-        // ignore: deprecated_member_use
-        return FlatButton(
-          color: timeUpFlag ? widget.color : widget.disabledColor,
-          disabledColor: widget.disabledColor,
-          onPressed: _onPressed,
-          child: _buildChild(),
-        );
-      //OutlineButton is deprecated, use OutlinedButton instead
-      case ButtonType.OutlineButton:
-        // ignore: deprecated_member_use
-        return OutlineButton(
-          borderSide: BorderSide(
-            color: timeUpFlag ? widget.color : widget.disabledColor,
-          ),
-          disabledBorderColor: widget.disabledColor,
-          onPressed: _onPressed,
-          child: _buildChild(),
-        );
       case ButtonType.ElevatedButton:
         return ElevatedButton(
-            onPressed: _onPressed,
-            child: _buildChild(),
-            style: ElevatedButton.styleFrom(
-              primary: timeUpFlag ? widget.color : widget.disabledColor,
-            ));
+          onPressed: _onPressed,
+          style: ElevatedButton.styleFrom(
+            foregroundColor: color,
+          ),
+          child: _buildChild(),
+        );
       case ButtonType.TextButton:
         return TextButton(
-            onPressed: _onPressed,
-            child: _buildChild(),
-            style: TextButton.styleFrom(
-              backgroundColor: timeUpFlag ? widget.color : widget.disabledColor,
-            ));
+          onPressed: _onPressed,
+          style: TextButton.styleFrom(
+            backgroundColor: color,
+          ),
+          child: _buildChild(),
+        );
       case ButtonType.OutlinedButton:
         return OutlinedButton(
-            onPressed: _onPressed,
-            child: _buildChild(),
-            style: OutlinedButton.styleFrom(
-              side: BorderSide(
-                color: timeUpFlag ? widget.color : widget.disabledColor,
-              ),
-            ));
+          onPressed: _onPressed,
+          style: OutlinedButton.styleFrom(
+            side: BorderSide(
+              color: color,
+            ),
+          ),
+          child: _buildChild(),
+        );
       default:
         return Container();
     }

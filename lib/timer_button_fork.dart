@@ -59,7 +59,8 @@ class TimerButton extends StatefulWidget {
     this.buttonType = ButtonType.ElevatedButton,
     this.activeTextStyle,
     this.disabledTextStyle = const TextStyle(color: Colors.black45),
-  }) : timeBuilder = null, super(key: key);
+  })  : timeBuilder = null,
+        super(key: key);
 
   /// Constructor for the TimerButton using builder.
   TimerButton.builder({
@@ -132,13 +133,13 @@ class _TimerButtonState extends State<TimerButton> {
     return Container(
       child: timeUpFlag
           ? Text(
-        widget.label,
-        style: activeTextStyle,
-      )
+              widget.label,
+              style: activeTextStyle,
+            )
           : Text(
-        widget.label + labelSplitter + '$timeCounter${widget.secPostFix}',
-        style: widget.disabledTextStyle,
-      ),
+              widget.label + labelSplitter + '$timeCounter${widget.secPostFix}',
+              style: widget.disabledTextStyle,
+            ),
     );
   }
 

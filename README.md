@@ -63,7 +63,7 @@ With `TimerButton.builder`:
 ```
 TimerButton.builder(
   timeOutInSeconds: 20,
-  builder: (BuildContext context, int seconds) {
+  timeBuilder: (BuildContext context, int seconds) {
     return Text("$seconds seconds");
   },
   onPressed: () {

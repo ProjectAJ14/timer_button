@@ -6,7 +6,7 @@
 
 Timer Button is a Flutter package that provides an interactive, self-disabling button which re-enables after a specified timeout. With our major 4.0.0 release, we have introduced `TimerButton.builder` for more customizability.
 
-![Timer Button Demo](https://cdn-images-1.medium.com/max/640/1*NhgmN1C4ltcQA-o34SYbIQ.gif)
+
 
 ## Getting Started
 

@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Timer Button Demo',
+      title: 'Timer Button Fork Demo',
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -64,6 +64,22 @@ class MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                   buttonType: ButtonType.TextButton,
                   disabledColor: Colors.deepOrange,
                   color: Colors.green,
+                ),
+                TimerButton.builder(
+                  onPressed: () {
+                    print("Hey, a custom button is clicked!");
+                  },
+                  timeOutInSeconds: 5,
+                  timeBuilder: (BuildContext context, int sec) {
+                    return Container(
+                      padding: EdgeInsets.all(10.0),
+                      color: sec > 0 ? Colors.red : Colors.green,
+                      child: Text(
+                        sec > 0 ? "Custom Wait for $sec seconds" : "Click Me",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),

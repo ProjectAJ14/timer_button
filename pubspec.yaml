@@ -1,11 +1,12 @@
 name: timer_button_fork
 description: A new Flutter package would help you to create timer button which will be enabled after specified time.
-version: 3.0.1
+version: 4.0.0
 homepage: https://github.com/chetanxpatil/timer_button_fork
 documentation: https://github.com/chetanxpatil/timer_button_fork
 
 environment:
-  sdk: '>=2.18.2 <3.0.0'
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
@@ -14,5 +15,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^2.0.1
 
 flutter:

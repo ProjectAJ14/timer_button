@@ -1,21 +1,17 @@
-# Timer Button
 
-[![](https://img.shields.io/badge/build-3.0.1-brightgreen)](repo_link)
+# Timer Button for Flutter
+
+[![Build](https://img.shields.io/badge/build-4.0.0-brightgreen)](https://github.com/chetanxpatil/timer_button_fork)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+Timer Button is a Flutter package that provides an interactive, self-disabling button which re-enables after a specified timeout. With our major 4.0.0 release, we have introduced `TimerButton.builder` for more customizability.
 
-This Package will enable a new Flutter package for the timer button after a specified time.
+![Timer Button Demo](https://cdn-images-1.medium.com/max/640/1*NhgmN1C4ltcQA-o34SYbIQ.gif)
 
-![timer_button](https://cdn-images-1.medium.com/max/640/1*NhgmN1C4ltcQA-o34SYbIQ.gif)
+## Getting Started
 
-
-A Button that gets triggered will enable after a specified time.
-
-
-## Let's get started
-
-1. Go to `pubspec.yaml` 
-2. add a ns_utils and replace `[version]` with the latest version:  
+1. Open `pubspec.yaml` in your project.
+2. Add `timer_button_fork` dependency and replace `[version]` with the latest version:
 
 ```yaml
 dependencies:
@@ -23,62 +19,73 @@ dependencies:
     sdk: flutter
   timer_button_fork: ^[version]
 ```
-3. click the packages get button or *flutter pub get*  
+3. Install it by running command: `flutter pub get`
 
-## Import the package
+## Importing the Package
 
 ```dart
-import 'package:timer_button/timer_button_fork.dart';
+import 'package:timer_button_fork/timer_button_fork.dart';
 ```
 
-
 ## Usage
-Set ButtonType for Button. There are 3 Type of button :
 
- - ElevatedButton ```buttonType: ButtonType.ElevatedButton```
- - TextButton ```buttonType: ButtonType.TextButton```
- - OutlinedButton ```buttonType: ButtonType.OutlinedButton```
- 
+Choose from three types of buttons:
 
+- ElevatedButton: `buttonType: ButtonType.ElevatedButton`
+- TextButton: `buttonType: ButtonType.TextButton`
+- OutlinedButton: `buttonType: ButtonType.OutlinedButton`
 
-Set text/label  ``` label: "Try Again" ```
+Specify the label text: `label: "Try Again"`
 
-Set timeout in seconds ``` timeOutInSeconds: 20 ```
+Set the timeout duration in seconds: `timeOutInSeconds: 20`
 
-Set color ```color: Colors.deepPurple```
+Define button colors: `color: Colors.deepPurple`, `disabledColor: Colors.red`
 
-Set disabled color ``` disabledColor: Colors.red ```
+Now, you can also customize the appearance and behavior of the button during the timeout period using `TimerButton.builder`.
 
 ## Example
 
-``` 
-                new TimerButton(
-                  label: "Send OTP Again",
-                  timeOutInSeconds: 20,
-                  onPressed: () {},
-                  disabledColor: Colors.red,
-                  color: Colors.deepPurple,
-                  disabledTextStyle: new TextStyle(fontSize: 20.0),
-                  activeTextStyle: new TextStyle(fontSize: 20.0, color: Colors.white),
-                )
-
+Traditional use:
+```
+TimerButton(
+  label: "Send OTP Again",
+  timeOutInSeconds: 20,
+  onPressed: () {},
+  disabledColor: Colors.red,
+  color: Colors.deepPurple,
+  disabledTextStyle: TextStyle(fontSize: 20.0),
+  activeTextStyle: TextStyle(fontSize: 20.0, color: Colors.white),
+)
 ```
 
+With `TimerButton.builder`:
 
-[For issues and source code](https://github.com/chetanxpatil/timer_button_fork)
+```
+TimerButton.builder(
+  timeOutInSeconds: 20,
+  builder: (BuildContext context, int seconds) {
+    return Text("$seconds seconds");
+  },
+  onPressed: () {
+    print('Button Pressed!');
+  },
+)
+```
 
+For issues, bugs, and feature requests, visit our [GitHub repository](https://github.com/chetanxpatil/timer_button_fork).
 
 ## Contributing
 
-There are a couple of ways in which you can contribute.
-- Propose any feature, enhancement
-- Report a bug
-- Fix a bug
-- Participate in a discussion and help in decision making
-- Write and improve some **documentation**. Documentation is supercritical, and its importance
-  cannot be overstated!
-- Send in a Pull Request :-)
+We'd love to have your contributions! Here's how you can help:
 
-[repo_link]: https://github.com/chetanxpatil/timer_button_fork
+- Propose new features or enhancements
+- Report bugs
+- Fix open issues
+- Participate in discussions and help in decision making
+- Improve documentation. We can't stress the importance of this enough!
 
+Submit your contributions as pull requests on [our GitHub](https://github.com/chetanxpatil/timer_button_fork).
 
+---
+
+Please replace `4.0.0` with your actual package version number.

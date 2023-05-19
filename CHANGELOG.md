@@ -1,4 +1,8 @@
-##[3.0.1]
+## [3.0.2]
+
+* Minor Changes
+
+## [3.0.1]
 
 * Working with latest version of `flutter` and `dart`
 

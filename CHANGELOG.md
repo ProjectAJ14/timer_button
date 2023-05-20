@@ -1,3 +1,8 @@
+
+## [4.0.1]
+* Minor Changes
+* Updated README.md
+
 ## [4.0.0]
 
 * Major Release: Introduced `TimerButton.builder`, a new constructor which allows to customize the UI.

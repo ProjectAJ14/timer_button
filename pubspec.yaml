@@ -1,14 +1,13 @@
 name: timer_button
-description: A button that starts a timer and disables itself until the timer is done.
-version: 2.0.1
+description: Timer Button is a Flutter package that offers a customizable button widget capable of activation after a designated time interval.
+version: 2.1.0
 homepage: https://github.com/ProjectAJ14/timer_button
 documentation: https://github.com/ProjectAJ14/timer_button
 repository: https://github.com/ProjectAJ14/timer_button
 issue_tracker: https://github.com/ProjectAJ14/timer_button/issues
 
 environment:
-  sdk: '>=2.18.4 <3.0.0'
-  flutter: ">=1.17.0"
+  sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
   flutter:
@@ -17,5 +16,5 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.1
+  flutter_lints: ^2.0.3
 flutter:

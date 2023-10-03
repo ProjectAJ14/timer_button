@@ -1,14 +1,17 @@
+## [2.1.0]
+-  
+
 ## [2.0.1]
-- Resolved 
+- Updated Readme.md 
 
 ## [2.0.0] 
 
 * Migrating to null safety and Added New buttons. Thanks to [Adakar](https://github.com/Adakar)
-* Feature Added: "secPostFix" pass it into the constructor ([#7](https://github.com/ajaynonstopio/timer_button/issues/7)). Thanks to [evanholt1](https://github.com/evanholt1)
+* Feature Added: "secPostFix" pass it into the constructor ([#7](https://github.com/ProjectAJ14/timer_button/issues/7)). Thanks to [evanholt1](https://github.com/evanholt1)
 
 ## [1.0.2] 
 
-* Feature Added: Reset timer button ([#5](https://github.com/ajaynonstopio/timer_button/issues/5)). Thanks to [gerald-tetteh](https://github.com/gerald-tetteh)
+* Feature Added: Reset timer button ([#5](https://github.com/ProjectAJ14/timer_button/issues/5)). Thanks to [gerald-tetteh](https://github.com/gerald-tetteh)
 
 ## [1.0.1] 
 

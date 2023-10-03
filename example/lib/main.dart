@@ -45,11 +45,11 @@ class MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 TimerButton(
-                  label: "Elevated: Try Again",
+                  label: "Try Again",
                   timeOutInSeconds: 5,
-                  onPressed: () {},
-                  buttonType: ButtonType.ElevatedButton,
-                  color: Colors.green,
+                  onPressed: () {
+                    log("Time for some action!");
+                  },
                 ),
                 TimerButton(
                   label: "Outlined: Try Again",
@@ -71,6 +71,18 @@ class MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                   buttonType: ButtonType.TextButton,
                   disabledColor: Colors.deepOrange,
                   color: Colors.green,
+                ),
+                TimerButton.builder(
+                  builder: (context, timeLeft) {
+                    return Text(
+                      "Custom: $timeLeft",
+                      style: const TextStyle(color: Colors.red),
+                    );
+                  },
+                  onPressed: () {
+                    log("Time for some action!");
+                  },
+                  timeOutInSeconds: 5,
                 ),
               ],
             ),

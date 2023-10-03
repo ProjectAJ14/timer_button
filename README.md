@@ -1,21 +1,22 @@
 # Timer Button
 
-[![](https://img.shields.io/badge/build-2.0.0-brightgreen)](repo_link)
+[![Build Status](https://img.shields.io/badge/build-2.1.0-brightgreen)](https://github.com/ProjectAJ14/timer_button)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+A versatile Flutter package that provides a timer button widget, which becomes enabled after a
+specified time delay.
 
-A new Flutter package for timer button which will be enabled after specified time.
+![Timer Button](https://cdn-images-1.medium.com/max/640/1*NhgmN1C4ltcQA-o34SYbIQ.gif)
 
-![timer_button](https://cdn-images-1.medium.com/max/640/1*NhgmN1C4ltcQA-o34SYbIQ.gif)
+## Overview
 
+A customizable button widget capable of activation after a designated time interval.
 
-A Button which will be enabled after specified time.
+## Getting Started
 
-
-## Let's get started
-
-1. Go to `pubspec.yaml` 
-2. add a ns_utils and replace `[version]` with the latest version:  
+1. Open your project's `pubspec.yaml` file.
+2. Add the `timer_button` package to your dependencies, replacing `[version]` with the latest
+   version:
 
 ```yaml
 dependencies:
@@ -23,64 +24,92 @@ dependencies:
     sdk: flutter
   timer_button: ^[version]
 ```
-3. click the packages get button or *flutter pub get*  
 
-## Import the package
+3. Run `flutter pub get` to fetch the package.
+
+## Import the Package
 
 ```dart
 import 'package:timer_button/timer_button.dart';
 ```
 
-
 ## Usage
-Set ButtonType for Button. There are 3 Type of button :
- - RaisedButton ```buttonType: ButtonType.RaisedButton``` (default)
- - FlatButton ```buttonType: ButtonType.FlatButton```
- - OutlineButton ```buttonType: ButtonType.OutlineButton```
- - ElevatedButton ```buttonType: ButtonType.ElevatedButton```
- - TextButton ```buttonType: ButtonType.TextButton```
- - OutlinedButton ```buttonType: ButtonType.OutlinedButton```
- 
 
+To use the Timer Button, follow these steps:
 
-Set text/label  ``` label: "Try Again" ```
+1. Set the button type. There are six types to choose from:
 
-Set timeout in seconds ``` timeOutInSeconds: 20 ```
+- ElevatedButton (`buttonType: ButtonType.ElevatedButton`) - default
+- TextButton (`buttonType: ButtonType.TextButton`)
+- OutlineButton (`buttonType: ButtonType.OutlineButton`)
+- Custom (`buttonType: ButtonType.Custom`)
 
-Set color ```color: Colors.deepPurple```
+2. Specify the button label using `label: "Your Label"`.
 
-Set disabled color ``` disabledColor: Colors.red ```
+3. Set the timeout duration in seconds with `timeOutInSeconds: 20`.
+
+4. Customize the button's color using `color: Colors.deepPurple`.
+
+5. Define the disabled color with `disabledColor: Colors.red`.
 
 ## Example
 
-``` 
-                new TimerButton(
-                  label: "Send OTP Again",
-                  timeOutInSeconds: 20,
-                  onPressed: () {},
-                  disabledColor: Colors.red,
-                  color: Colors.deepPurple,
-                  disabledTextStyle: new TextStyle(fontSize: 20.0),
-                  activeTextStyle: new TextStyle(fontSize: 20.0, color: Colors.white),
-                )
+Default Timer Button:
 
+```dart
+                TimerButton
+(
+label: "Default",
+timeOutInSeconds: 5,
+onPressed: () {
+log("Time for some action!");
+},
+)
+,
 ```
 
+With `TimerButton.builder`: You can customize the button's appearance by passing a `builder`
+function:
 
-[For issues and source code](https://github.com/ajaynonstopio/timer_button)
+```dart
+                TimerButton.builder
+(
+builder: (context, timeLeft) {
+return Text(
+"Custom: $timeLeft",
+style: const TextStyle(color: Colors.white),
+);
+},
+onPressed: () {
+log("Time for some action!");
+},
+timeOutInSeconds
+:
+5
+,
+)
+,
+```
 
+## Issues and Source Code
+
+For reporting issues and accessing the source code, visit
+our [GitHub Repository](https://github.com/ProjectAJ14/timer_button).
 
 ## Contributing
 
-There are couple of ways in which you can contribute.
-- Propose any feature, enhancement
-- Report a bug
-- Fix a bug
-- Participate in a discussion and help in decision making
-- Write and improve some **documentation**. Documentation is super critical and its importance
-  cannot be overstated!
-- Send in a Pull Request :-)
+We welcome contributions in various forms:
 
-[repo_link]: https://github.com/ajaynonstopio/timer_button
+- Proposing new features or enhancements.
+- Reporting and fixing bugs.
+- Engaging in discussions to help make decisions.
+- Improving documentation, as it is essential.
+- Sending Pull Requests is greatly appreciated!
 
+A big thank you to all our contributors! 🙌
 
+<div align="center">
+  <a href="https://github.com/ProjectAJ14/timer_button/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=ProjectAJ14/timer_button" />
+  </a>
+</div>

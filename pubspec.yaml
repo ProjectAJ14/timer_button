@@ -1,11 +1,13 @@
 name: timer_button
-description: A new Flutter package would help you to create timer button which will be enabled after specified time.
-version: 2.0.0
-homepage: https://github.com/ajaykumargithub2114/timer_button
-documentation: https://github.com/ajaykumargithub2114/timer_button
+description: Timer Button is a Flutter package that offers a customizable button widget capable of activation after a designated time interval.
+version: 2.1.0
+homepage: https://github.com/ProjectAJ14/timer_button
+documentation: https://github.com/ProjectAJ14/timer_button
+repository: https://github.com/ProjectAJ14/timer_button
+issue_tracker: https://github.com/ProjectAJ14/timer_button/issues
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
   flutter:
@@ -14,5 +16,5 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  flutter_lints: ^2.0.3
 flutter:

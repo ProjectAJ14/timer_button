@@ -1,6 +1,6 @@
 # Timer Button
 
-[![Build Status](https://img.shields.io/badge/build-2.1.0-brightgreen)](https://github.com/ProjectAJ14/timer_button)
+[![Build Status](https://img.shields.io/badge/build-2.1.1-brightgreen)](https://github.com/ProjectAJ14/timer_button)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 A versatile Flutter package that provides a timer button widget, which becomes enabled after a
@@ -39,10 +39,10 @@ To use the Timer Button, follow these steps:
 
 1. Set the button type. There are six types to choose from:
 
-- ElevatedButton (`buttonType: ButtonType.ElevatedButton`) - default
-- TextButton (`buttonType: ButtonType.TextButton`)
-- OutlineButton (`buttonType: ButtonType.OutlineButton`)
-- Custom (`buttonType: ButtonType.Custom`)
+- ElevatedButton (`buttonType: ButtonType.elevatedButton`) - default
+- TextButton (`buttonType: ButtonType.textButton`)
+- OutlineButton (`buttonType: ButtonType.outlineButton`)
+- Custom (`buttonType: ButtonType.custom`)
 
 2. Specify the button label using `label: "Your Label"`.
 
@@ -55,40 +55,31 @@ To use the Timer Button, follow these steps:
 ## Example
 
 Default Timer Button:
-
 ```dart
-                TimerButton
-(
-label: "Default",
-timeOutInSeconds: 5,
-onPressed: () {
-log("Time for some action!");
-},
-)
-,
+                TimerButton(
+                  label: "Try Again",
+                  timeOutInSeconds: 5,
+                  onPressed: () {
+                    log("Time for some action!");
+                  },
+                ),
 ```
 
 With `TimerButton.builder`: You can customize the button's appearance by passing a `builder`
 function:
-
 ```dart
-                TimerButton.builder
-(
-builder: (context, timeLeft) {
-return Text(
-"Custom: $timeLeft",
-style: const TextStyle(color: Colors.white),
-);
-},
-onPressed: () {
-log("Time for some action!");
-},
-timeOutInSeconds
-:
-5
-,
-)
-,
+                TimerButton.builder(
+                  builder: (context, timeLeft) {
+                    return Text(
+                      "Custom: $timeLeft",
+                      style: const TextStyle(color: Colors.red),
+                    );
+                  },
+                  onPressed: () {
+                    log("Time for some action!");
+                  },
+                  timeOutInSeconds: 5,
+                ),
 ```
 
 ## Issues and Source Code
@@ -107,7 +98,7 @@ We welcome contributions in various forms:
 - Sending Pull Requests is greatly appreciated!
 
 A big thank you to all our contributors! 🙌
-
+</br>
 <div align="center">
   <a href="https://github.com/ProjectAJ14/timer_button/graphs/contributors">
     <img src="https://contrib.rocks/image?repo=ProjectAJ14/timer_button" />

@@ -55,7 +55,7 @@ class MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                   label: "Outlined: Try Again",
                   timeOutInSeconds: 5,
                   onPressed: () {},
-                  buttonType: ButtonType.OutlinedButton,
+                  buttonType: ButtonType.outlinedButton,
                   disabledColor: Colors.deepOrange,
                   color: Colors.green,
                   activeTextStyle: const TextStyle(color: Colors.yellow),
@@ -68,7 +68,7 @@ class MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                     log("Time for some action!");
                   },
                   timeUpFlag: true,
-                  buttonType: ButtonType.TextButton,
+                  buttonType: ButtonType.textButton,
                   disabledColor: Colors.deepOrange,
                   color: Colors.green,
                 ),

@@ -8,6 +8,7 @@
 .buildlog/
 .history
 .svn/
+migrate_working_dir/
 
 # IntelliJ related
 *.iml
@@ -31,9 +32,6 @@
 .pub/
 /build/
 
-# Web related
-lib/generated_plugin_registrant.dart
-
 # Symbolication related
 app.*.symbols
 
@@ -45,6 +43,10 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-
-#
-
+#All platforms
+android/
+ios/
+linux/
+macos/
+web/
+windows/

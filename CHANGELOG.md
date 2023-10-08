@@ -1,3 +1,8 @@
+## [2.1.1]
+
+- Updated Documentation and Code Refactoring as per the dart analysis
+- Updated `ButtonType` enum values to lowerSnakeCase
+  
 ## [2.1.0]
 
 - Resolved #13, #16 #17
@@ -9,6 +14,10 @@
     - [CPrimbee](https://github.com/CPrimbee)
     - [udcode](https://github.com/udcode)
     - [chetanxpatil](https://github.com/chetanxpatil)
+
+## [2.0.1]
+
+- Updated Readme.md
 
 ## [2.0.1]
 

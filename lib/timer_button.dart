@@ -9,10 +9,10 @@ import 'package:flutter/material.dart';
 typedef TimerButtonBuilder = Widget Function(BuildContext context, int seconds);
 
 enum ButtonType {
-  ElevatedButton,
-  TextButton,
-  OutlinedButton,
-  Custom,
+  elevatedButton,
+  textButton,
+  outlinedButton,
+  custom,
 }
 
 const int aSec = 1;
@@ -74,7 +74,7 @@ class TimerButton extends StatefulWidget {
     this.resetTimerOnPressed = true,
     this.timeUpFlag = false,
     this.disabledColor = Colors.grey,
-    this.buttonType = ButtonType.ElevatedButton,
+    this.buttonType = ButtonType.elevatedButton,
     this.activeTextStyle,
     this.disabledTextStyle = const TextStyle(color: Colors.black45),
   })  : builder = null,
@@ -89,7 +89,7 @@ class TimerButton extends StatefulWidget {
     required this.timeOutInSeconds,
     this.resetTimerOnPressed = true,
     this.timeUpFlag = false,
-  })  : buttonType = ButtonType.Custom,
+  })  : buttonType = ButtonType.custom,
         activeTextStyle = null,
         disabledColor = Colors.grey,
         color = Colors.blue,
@@ -180,7 +180,7 @@ class _TimerButtonState extends State<TimerButton> {
       buttonType: widget.buttonType,
     );
     switch (widget.buttonType) {
-      case ButtonType.ElevatedButton:
+      case ButtonType.elevatedButton:
         return ElevatedButton(
           onPressed: _timeUpFlag ? _onPressed : null,
           style: ElevatedButton.styleFrom(
@@ -188,7 +188,7 @@ class _TimerButtonState extends State<TimerButton> {
           ),
           child: child,
         );
-      case ButtonType.TextButton:
+      case ButtonType.textButton:
         return TextButton(
           onPressed: _timeUpFlag ? _onPressed : null,
           style: TextButton.styleFrom(
@@ -196,7 +196,7 @@ class _TimerButtonState extends State<TimerButton> {
           ),
           child: child,
         );
-      case ButtonType.OutlinedButton:
+      case ButtonType.outlinedButton:
         return OutlinedButton(
           onPressed: _timeUpFlag ? _onPressed : null,
           style: OutlinedButton.styleFrom(
@@ -236,7 +236,7 @@ class TimerButtonChild extends StatelessWidget {
   Widget build(BuildContext context) {
     final textStyle = timeUpFlag
         ? activeTextStyle ??
-            (buttonType == ButtonType.OutlinedButton
+            (buttonType == ButtonType.outlinedButton
                 ? TextStyle(color: color)
                 : const TextStyle(color: Colors.white))
         : disabledTextStyle;

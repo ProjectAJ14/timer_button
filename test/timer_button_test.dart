@@ -17,7 +17,7 @@ void main() {
         ),
       );
 
-      await tester.pumpAndSettle(Duration(seconds: 1));
+      await tester.pumpAndSettle(const Duration(seconds: 1));
 
       expect(tester.widget<ElevatedButton>(find.byType(ElevatedButton)).enabled, isTrue);
     });
